@@ -3,24 +3,21 @@ package com.sps.todo
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.activity.viewModels
-import com.sps.todo.viewmodel.TodoViewModel
+import com.sps.todo.navigation.Navigation
+import com.swastik.compose.ui.theme.TodoTheme
 import dagger.hilt.android.AndroidEntryPoint
 
 
 @AndroidEntryPoint
 class MainActivity : ComponentActivity() {
-
-    private val todoViewModel : TodoViewModel by viewModels()
-
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-
+            TodoTheme {
+                Navigation()
+            }
         }
 
     }
-
 
 }
