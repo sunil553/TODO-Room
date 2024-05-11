@@ -58,6 +58,17 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+
+    // Testing
+    testImplementation (libs.junit)
+    testImplementation (libs.mockito.core)
+    testImplementation (libs.mockito.inline)
+    testImplementation (libs.turbine)
+//    testImplementation(libs.annotation)
+    testImplementation(libs.mockito.kotlin)
+    implementation(libs.androidx.annotation)
+    testImplementation(libs.turbine)
+    testImplementation(libs.kotlinx.coroutines.test)
 }
 java {
     sourceCompatibility = JavaVersion.VERSION_17

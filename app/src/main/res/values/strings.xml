@@ -4,5 +4,6 @@
     <string name="description">Click On + Icon to Add TODO</string>
     <string name="add_screen_description">Enter Your TODO Notes</string>
     <string name="add_todo">Submit</string>
+    <string name="error_todo">Unable to add Todo</string>
 
 </resources>

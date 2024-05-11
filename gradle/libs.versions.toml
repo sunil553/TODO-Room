@@ -35,12 +35,14 @@ activityCompose = "1.9.0"
 viewModelCompose = "2.7.0"
 lifecycleRuntimeKtx = "2.7.0"
 jetbrainsKotlinJvm = "1.9.22"
+coreTesting = "2.2.0"
 
 
 
 [libraries]
 androidx-annotation = { module = "androidx.annotation:annotation", version.ref = "annotationVersion" }
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
+androidx-core-testing = { module = "androidx.arch.core:core-testing", version.ref = "coreTesting" }
 
 androidx-hilt-navigation-compose = { module = "androidx.hilt:hilt-navigation-compose", version.ref = "hiltNavigationCompose" }
 androidx-lifecycle-common-java8 = { module = "androidx.lifecycle:lifecycle-common-java8", version.ref = "lifecycleRuntimeCompose" }
@@ -57,7 +59,6 @@ androidx-room-ktx = { module = "androidx.room:room-ktx", version.ref = "roomRunt
 androidx-room-runtime = { module = "androidx.room:room-runtime", version.ref = "roomRuntime" }
 androidx-room-testing = { module = "androidx.room:room-testing", version.ref = "roomRuntime" }
 
-annotation = { module = "org.mockito4kotlin:annotation", version.ref = "annotation" }
 converter-gson = { module = "com.squareup.retrofit2:converter-gson", version.ref = "converterGson" }
 
 hilt-android = { module = "com.google.dagger:hilt-android", version.ref = "hiltCore" }
@@ -96,6 +97,7 @@ androidx-material3 = { group = "androidx.compose.material3", name = "material3" 
 androidx-live-data-compose = { group = "androidx.lifecycle" , name = "lifecycle-viewmodel-compose" , version.ref = "viewModelCompose"}
 androidx-lifecycle-runtime-ktx = { group = "androidx.lifecycle", name = "lifecycle-runtime-ktx", version.ref = "lifecycleRuntimeKtx" }
 androidx-lifecycle-service = { module = "androidx.lifecycle:lifecycle-service", version.ref = "lifecycleService" }
+#annotation = { module = "org.mockito4kotlin:annotation", version.ref = "annotation" }
 
 
 [plugins]

@@ -22,26 +22,26 @@ class TodoViewModel @Inject constructor(
     val uiState: StateFlow<List<TodoItemModel>> = _uiState
 
 
+    private val _errorMessage : MutableStateFlow<Boolean> = MutableStateFlow(false)
+    val errorMessage: StateFlow<Boolean> = _errorMessage
 
-
-    sealed class UiStates{
-        data class ShowLoading(val loading : Boolean) : UiStates()
-        data class Success(val data : List<TodoItemModel>) : UiStates()
-
-    }
 
     init {
         getAllTodo()
     }
 
-    fun insertTodo(title : String){
+    fun insertTodo(title : String) {
         viewModelScope.launch {
-            insertTodoUseCase.invoke(title)
+            if (title == "Error") {
+                _errorMessage.value = true
+            } else {
+                insertTodoUseCase.invoke(title)
+            }
         }
+
     }
-     fun getAllTodo(){
+    fun getAllTodo(){
         viewModelScope.launch {
-            UiStates.ShowLoading(true)
             getAllTodoUseCase.invoke().collect{ data ->
                 _uiState.value = data
             }

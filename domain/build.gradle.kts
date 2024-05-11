@@ -15,18 +15,18 @@ dependencies {
     //Hilt
     implementation (libs.hilt.core)
 
-    //Gson
-    implementation (libs.converter.gson)
-    implementation (libs.json)
 
     // Testing
     testImplementation (libs.junit)
     testImplementation (libs.mockito.core)
-    testImplementation (libs.mockito.kotlin)
     testImplementation (libs.mockito.inline)
-    implementation (libs.kotlin.stdlib)
     testImplementation (libs.turbine)
-    testImplementation (libs.kotlinx.coroutines.test)
+//    testImplementation(libs.annotation)
+    testImplementation(libs.mockito.kotlin)
+    implementation(libs.androidx.annotation)
+    testImplementation(libs.turbine)
+    testImplementation(libs.kotlinx.coroutines.test)
 
-    testImplementation(libs.junit)
+
+
 }

@@ -1,5 +1,6 @@
 package com.sps.todo.screens
 
+import android.widget.Toast
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
@@ -32,6 +33,7 @@ import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalLifecycleOwner
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.stringResource
@@ -82,6 +84,7 @@ fun MainScreen(navController: NavController) {
 
                 }
             }
+
             val collectAsState = viewModel.uiState.collectAsState()
             if (collectAsState.value.isEmpty()){
                 ShowTodoText()
@@ -93,6 +96,8 @@ fun MainScreen(navController: NavController) {
     }
 
 }
+
+
 
 /**
  * shows this text if no items are in the list
