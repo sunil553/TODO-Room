@@ -21,3 +21,9 @@ domain: Contains the business logic or domain layer of the application. This lay
 data: This layer is responsible for interacting with external data sources such as databases or APIs. It contains repository implementations and data sources.
 
 presentation: This layer handles the UI logic and presentation of data. It contains the ViewModels, UI components, and navigation logic.
+
+
+
+![Screenshot_20240511-115858_TODO](https://github.com/sunil553/TODO-Room/assets/10163144/f19cb143-51c0-4459-a14e-08a8d035dba8)
+![Screenshot_20240511-115901_TODO](https://github.com/sunil553/TODO-Room/assets/10163144/9d70ef3c-0386-4c1f-ac25-3364f590c0ad)
+![Screenshot_20240512-154938_TODO](https://github.com/sunil553/TODO-Room/assets/10163144/4e8e60f4-a7a4-42b8-8e90-c22f31d2d9a8)
