@@ -8,10 +8,6 @@ import com.sps.data.db.TodoDao
 import com.sps.data.db.TodoDatabase
 import com.sps.data.repository.TodoRepositoryImpl
 import com.sps.domain.repository.TodoRepository
-import com.sps.domain.usecase.GetAllTodoUseCase
-import com.sps.domain.usecase.GetAllTodoUseCaseImpl
-import com.sps.domain.usecase.InsertTodoUseCase
-import com.sps.domain.usecase.InsertTodoUseCaseImpl
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -42,19 +38,6 @@ object AppModule {
     @Provides
     fun provideTodoDataStore(tadoDao: TodoDao) : TodoDataStore {
       return  TodoDataStoreImpl(tadoDao)
-    }
-
-
-    @Singleton
-    @Provides
-    fun provideGetAllTodoUseCase(todoRepository: TodoRepository) : GetAllTodoUseCase {
-      return  GetAllTodoUseCaseImpl(todoRepository)
-    }
-
-    @Singleton
-    @Provides
-    fun provideInsertTodoItemUseCase(todoRepository: TodoRepository) : InsertTodoUseCase {
-      return  InsertTodoUseCaseImpl(todoRepository)
     }
 
 

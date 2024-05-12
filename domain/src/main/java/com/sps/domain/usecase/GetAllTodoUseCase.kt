@@ -1,6 +1,6 @@
 package com.sps.domain.usecase
 
-import com.sps.domain.entity.TodoItemModel
+import com.sps.domain.entity.TodoUiItemModel
 import kotlinx.coroutines.flow.Flow
 
 /**
@@ -13,5 +13,5 @@ interface GetAllTodoUseCase {
      *
      * @return
      */
-    suspend operator fun invoke() : Flow<List<TodoItemModel>>
+    suspend operator fun invoke() : Flow<List<TodoUiItemModel>>
 }

@@ -1,6 +1,6 @@
 package com.sps.domain.entity
 
 
-data class TodoItemModel(
+data class TodoUiItemModel(
     val item: String
 )

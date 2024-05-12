@@ -2,7 +2,7 @@ package com.sps.todo.viewmodel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.sps.domain.entity.TodoItemModel
+import com.sps.domain.entity.TodoUiItemModel
 import com.sps.domain.usecase.GetAllTodoUseCase
 import com.sps.domain.usecase.InsertTodoUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -17,9 +17,9 @@ class TodoViewModel @Inject constructor(
     private val insertTodoUseCase: InsertTodoUseCase
 ) : ViewModel() {
 
-    private val _uiState : MutableStateFlow<List<TodoItemModel>> = MutableStateFlow(arrayListOf())
+    private val _uiState : MutableStateFlow<List<TodoUiItemModel>> = MutableStateFlow(arrayListOf())
     //    expose state to view
-    val uiState: StateFlow<List<TodoItemModel>> = _uiState
+    val uiState: StateFlow<List<TodoUiItemModel>> = _uiState
 
 
     private val _errorMessage : MutableStateFlow<Boolean> = MutableStateFlow(false)
@@ -35,15 +35,15 @@ class TodoViewModel @Inject constructor(
             if (title == "Error") {
                 _errorMessage.value = true
             } else {
-                insertTodoUseCase.invoke(title)
+                insertTodoUseCase(title)
             }
         }
 
     }
     fun getAllTodo(){
         viewModelScope.launch {
-            getAllTodoUseCase.invoke().collect{ data ->
-                _uiState.value = data
+            getAllTodoUseCase().collect{ data ->
+                _uiState.emit(data)
             }
         }
     }

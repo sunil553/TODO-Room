@@ -1,7 +1,7 @@
 package com.sps.todo.viewmodel
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
-import com.sps.domain.entity.TodoItemModel
+import com.sps.domain.entity.TodoUiItemModel
 import com.sps.domain.usecase.GetAllTodoUseCase
 import com.sps.domain.usecase.InsertTodoUseCase
 import com.sps.todo.TestCoroutineRule
@@ -22,7 +22,7 @@ class TodoViewModelTest {
 
     private val getAllTodoUseCase = mock<GetAllTodoUseCase>()
     private val insertTodoUseCase = mock<InsertTodoUseCase>()
-    private val todoUiItemModel = mock<TodoItemModel>()
+    private val todoUiItemModel = mock<TodoUiItemModel>()
 
 
     @get:Rule

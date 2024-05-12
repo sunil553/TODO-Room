@@ -10,7 +10,7 @@ import kotlinx.coroutines.flow.Flow
 
 @Dao
 interface TodoDao {
-    // 2. Items Flow
+
     @Query("SELECT * FROM TodoItem")
     fun getAllTodos(): List<TodoItem>
 

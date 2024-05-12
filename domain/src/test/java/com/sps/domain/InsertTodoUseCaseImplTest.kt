@@ -23,7 +23,10 @@ class InsertTodoUseCaseImplTest {
 
     @Test
     fun `verify get all todo is invoke`() = runTest {
+//        Given
         val titleTest = "test"
+
+//        then
         sut.invoke(titleTest)
         verify(todoRepository).insertTodoItem(titleTest)
 

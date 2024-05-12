@@ -3,7 +3,7 @@ package com.sps.data.datastore
 import com.sps.data.db.TodoDao
 import com.sps.data.db.TodoItem
 import com.sps.data.mapper.TodoDomainMapper
-import com.sps.domain.entity.TodoItemModel
+import com.sps.domain.entity.TodoUiItemModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import javax.inject.Inject
@@ -11,7 +11,7 @@ import javax.inject.Inject
 internal class TodoDataStoreImpl @Inject constructor(
     private val todoDoa: TodoDao
     ) : TodoDataStore {
-    override suspend fun getAllTodoItems(): List<TodoItemModel> {
+    override suspend fun getAllTodoItems(): List<TodoUiItemModel> {
         return withContext(Dispatchers.IO){
              TodoDomainMapper.buildDomainMapper(todoItem = todoDoa.getAllTodos())
         }

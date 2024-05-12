@@ -1,6 +1,6 @@
 package com.sps.domain.repository
 
-import com.sps.domain.entity.TodoItemModel
+import com.sps.domain.entity.TodoUiItemModel
 import kotlinx.coroutines.flow.Flow
 
 interface TodoRepository {
@@ -9,7 +9,7 @@ interface TodoRepository {
      *
      * @return list of todo item
      */
-    suspend fun getAllTodos() : Flow<List<TodoItemModel>>
+    suspend fun getAllTodos() : Flow<List<TodoUiItemModel>>
 
     /**
      * insert TODO Item
