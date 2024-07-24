@@ -4,15 +4,14 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.DisposableEffect
 import androidx.compose.runtime.rememberUpdatedState
 import androidx.compose.ui.platform.LocalLifecycleOwner
-import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.LifecycleEventObserver
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.sps.todo.screens.AddToScreen
+import com.sps.todo.screens.LoadSplashScreen
 import com.sps.todo.screens.MainScreen
-import com.sps.todo.viewmodel.TodoViewModel
 
 /**
  * define navigation to be routed
@@ -21,7 +20,10 @@ import com.sps.todo.viewmodel.TodoViewModel
 @Composable
 fun Navigation() {
     val navController = rememberNavController()
-    NavHost(navController = navController, startDestination = Screen.HomeScreen.route) {
+    NavHost(navController = navController, startDestination = Screen.LoadSplashScreen.route) {
+        composable(route = Screen.LoadSplashScreen.route){
+            LoadSplashScreen(navController)
+        }
         composable(route = Screen.HomeScreen.route){
             MainScreen(navController)
         }
@@ -37,8 +39,9 @@ fun Navigation() {
  * @property route
  */
 sealed class Screen(val route : String) {
-    object AddTodoScreen : Screen("add_screen")
-    object HomeScreen : Screen("home_screen")
+    data object AddTodoScreen : Screen("add_screen")
+    data object HomeScreen : Screen("home_screen")
+    data object LoadSplashScreen : Screen("splash_screen")
 
 }
 

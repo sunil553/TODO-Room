@@ -59,8 +59,13 @@ dependencies {
     kapt(libs.androidx.lifecycle.compiler)
     implementation(libs.androidx.lifecycle.common.java8)
     implementation(libs.androidx.lifecycle.process)
+    implementation(libs.androidx.core.splashscreen)
 
     implementation(libs.androidx.hilt.navigation.compose)
+
+    implementation (libs.maps.compose)
+
+    implementation (libs.lottie.compose)
 
     //compose
     implementation(libs.androidx.activity.compose)
